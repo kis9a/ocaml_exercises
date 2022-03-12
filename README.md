@@ -10,6 +10,9 @@ To learn satic type system and functional language.
 brew install ocaml
 brew install opam
 opam install alcotest
+opam install dune
+echo 'eval $(opam config env)' >> ~/.zshrc
+zsh
 ```
 
 ## Execute
