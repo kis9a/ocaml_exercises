@@ -1,0 +1,3 @@
+(library
+ (name test_merge_list)
+ (libraries alcotest learn.src))
