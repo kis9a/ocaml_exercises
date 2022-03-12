@@ -2,17 +2,17 @@ let check msg x = Alcotest.(check bool) msg true x
 
 let test_merge_list () =
   check
-    "merge_list function result is total number of list of number"
+    "merge_list function result is merged list"
     (Src.Merge_list.merge [3; 4; 1] [] = [3; 4; 1])
 
 let test_merge_list2 () =
   check
-    "merge_list function result is total number of list of number"
+    "merge_list function result is merged list"
     (Src.Merge_list.merge [] [3; 4; 1] = [3; 4; 1])
 
 let test_merge_list3 () =
   check
-    "merge_list function result is total number of list of number"
+    "merge_list function result is merged list"
     (Src.Merge_list.merge [1; 3; 4] [2; 5; 1] = [1; 2; 3; 4; 5; 1])
 ;;
 
