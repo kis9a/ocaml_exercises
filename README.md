@@ -12,6 +12,15 @@ brew install opam
 opam install alcotest
 ```
 
+## Execute
+
+view [Makefile](./Makefile)
+
+```bash
+make build
+make test
+```
+
 ## Development
 
 ### LSP · Formatter

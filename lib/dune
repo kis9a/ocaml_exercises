@@ -1,2 +1,4 @@
 (library
- (name src))
+ (name src)
+ (public_name learn.src)
+ (libraries unix))

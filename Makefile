@@ -16,7 +16,7 @@ build:
 
 .PHONY: test
 test:
-	dune build @runtest
+	dune runtest -f
 
 .PHONY: clean
 clean:
