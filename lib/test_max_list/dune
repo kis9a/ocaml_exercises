@@ -1,0 +1,3 @@
+(library
+ (name test_max_list)
+ (libraries alcotest learn.src))
