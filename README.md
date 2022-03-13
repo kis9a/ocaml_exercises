@@ -1,7 +1,9 @@
 ## Why
 
-To learn satic type system and functional language.
-[OCaml - Wikipedia](https://en.wikipedia.org/wiki/OCaml)
+To learn ocaml language.
+
+> OCaml (/oʊˈkæməl/ oh-KAM-əl, formerly Objective Caml) is a general-purpose, multi-paradigm programming language which extends the Caml dialect of ML with object-oriented features.
+> [OCaml - Wikipedia](https://en.wikipedia.org/wiki/OCaml)
 
 ## Required
 
@@ -53,6 +55,7 @@ opam install ocamlformat-rpc
 
 ## Reference
 
+- [MEMO.md](./MEMO.md)
 - [99 problems OCaml](https://ocaml.org/learn/tutorials/99problems.html)
 - [Correct + Efficient + Beautiful OCaml Programming](https://cs3110.github.io/textbook/cover.html)
 - [M.Hiroi's Home Page / お気楽 OCaml プログラミング入門](http://www.nct9.ne.jp/m_hiroi/func/ocaml.html)
