@@ -36,6 +36,11 @@ opam install ocamlformat
 opam install ocamlformat-rpc
 ```
 
+### Formatter
+
+
+[ocamlformat/ocamlformat-help.txt at main · ocaml-ppx/ocamlformat · GitHub](https://github.com/ocaml-ppx/ocamlformat/blob/main/ocamlformat-help.txt)
+
 ### LSP setup with coc.nvim example
 
 [Language servers · neoclide/coc.nvim Wiki · GitHub](https://github.com/neoclide/coc.nvim/wiki/Language-servers#ocaml-and-reasonml)
