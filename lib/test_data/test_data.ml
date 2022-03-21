@@ -73,6 +73,20 @@ let test_optional_arg_serve () =
   check "function by optional argument"
     (Src.Fun_args.optional_arg 1 4 ~step:2 = [1; 3])
 
+(* string concat *)
+let test_concat_string () =
+  check "string concat" (Src.String.concat "a" "b" = "ab")
+
+(* string join *)
+let test_join_string () =
+  check "string join" (Src.String.join ["a"; "b"] = "a,b")
+
+let test_join_string2 () =
+  check "string join" (Src.String.join ["a"; "b"] ~d:"&" = "a&b")
+
+(* string slice *)
+let test_slice_string () = check "string slice" (String.sub "abcde" 2 3 = "cde")
+
 let tests =
   [ ("even", `Quick, test_even); ("factorial", `Quick, test_factorial)
   ; ("factorial pattern maching", `Quick, test_factorial2)
@@ -87,4 +101,7 @@ let tests =
   ; ("fibonacci", `Quick, test_fibonacci)
   ; ("function label arg", `Quick, test_fun_label_arg)
   ; ("function optional arg", `Quick, test_optional_arg)
-  ; ("function optional arg serve", `Quick, test_optional_arg_serve) ]
+  ; ("function optional arg serve", `Quick, test_optional_arg_serve)
+  ; ("string concat", `Quick, test_concat_string)
+  ; ("string join", `Quick, test_join_string)
+  ; ("string slice", `Quick, test_slice_string) ]
