@@ -1,3 +1,3 @@
 (library
- (name test_even)
+ (name test_list)
  (libraries alcotest learn.src))
