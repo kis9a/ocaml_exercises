@@ -15,6 +15,8 @@ opam install alcotest
 opam install dune
 echo 'eval $(opam config env)' >> ~/.zshrc
 zsh
+
+opam install . --deps-only
 ```
 
 ## Execute
@@ -37,7 +39,6 @@ opam install ocamlformat-rpc
 ```
 
 ### Formatter
-
 
 [ocamlformat/ocamlformat-help.txt at main · ocaml-ppx/ocamlformat · GitHub](https://github.com/ocaml-ppx/ocamlformat/blob/main/ocamlformat-help.txt)
 

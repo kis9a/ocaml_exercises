@@ -1,9 +1,11 @@
 opam-version: "2.0"
 maintainer: "kis9ax@gmail.com"
 authors: ["kis9a"]
-homepage: "https://github.com/kis9a/learn-ocaml"
 license: "MIT"
-description: ""
+description: "Ocaml snippets"
+synopsis: "Ocaml snippets"
+homepage: "https://github.com/kis9a/ocaml-snippets"
+bug-reports: "https://github.com/kis9a/ocaml-snippets"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
