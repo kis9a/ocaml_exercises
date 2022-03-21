@@ -40,6 +40,16 @@ let test_merge_list3 () =
   check "merge_list function result is merged list"
     (Src.Merge_list.merge [1; 3; 4] [2; 5; 1] = [1; 2; 3; 4; 5; 1])
 
+(* filter list *)
+let test_filter_list () =
+  check "list filter function, result is filter by argument function"
+    (List.filter (fun a -> a < 3) [1; 2; 3; 4] = [1; 2])
+
+(* find all list *)
+let test_find_list () =
+  check "list find all function, result is find all by argument function"
+    (List.find_all (fun a -> a = 3) [1; 2; 3; 3; 4; 3] = [3; 3; 3])
+
 let tests =
   [ ("sum_list", `Quick, test_sum_list)
   ; ("sum_list_minus", `Quick, test_sum_list_minus)
@@ -48,4 +58,6 @@ let tests =
   ; ("reverse_list_string", `Quick, test_reverse_list_string)
   ; ("merge_list", `Quick, test_merge_list)
   ; ("merge_list_2", `Quick, test_merge_list2)
-  ; ("merge_list_3", `Quick, test_merge_list3) ]
+  ; ("merge_list_3", `Quick, test_merge_list3)
+  ; ("filter_list", `Quick, test_filter_list)
+  ; ("find_list", `Quick, test_find_list) ]
