@@ -1,6 +1,6 @@
 (executable
  (name run_tests)
- (libraries alcotest test_data test_list test_sort))
+ (libraries alcotest test_data test_list test_sort test_record))
 
 (rule
  (alias runtest)
