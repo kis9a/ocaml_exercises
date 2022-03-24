@@ -1,3 +1,5 @@
+## 演算子
+
 ### 算術演算子 (arithmetic operators)<!--{{{-->
 
 ```
@@ -14,7 +16,7 @@ mod 整数除算の剰余
 
 <!--}}}-->
 
-### 論理演算子 (logical operators)<!--{{{-->
+### 論理演算子 (logical operators)<!--{{{-->{{{
 
 > https://ocaml.jp/refman/ch06s07.html
 
@@ -52,49 +54,53 @@ asr	整数のビットごとの右算術シフト
 >=	「大なりイコール」テスト
 ```
 
+<!--}}}-->}}}
+
+### 演算子一覧<!--{{{-->
+
+[OCaml - The OCaml language](https://ocaml.org/manual/expr.html)
+
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
+| Operator        | Initial meaning                                                     |
+| +               | Integer addition.                                                   |
+| - (infix)       | Integer subtraction.                                                |
+| ~\- - (prefix)  | Integer negation.                                                   |
+| \*              | Integer multiplication.                                             |
+| /               | Integer division.Raise Division_by_zero if second argument is zero. |
+| mod             | Integer modulus. Raise Division_by_zero if second argument is zero. |
+| land            | Bitwise logical “and” on integers.                                  |
+| lor             | Bitwise logical “or” on integers.                                   |
+| lxor            | Bitwise logical “exclusive or” on integers.                         |
+| lsl             | Bitwise logical shift left on integers.                             |
+| lsr             | Bitwise logical shift right on integers.                            |
+| asr             | Bitwise arithmetic shift right on integers.                         |
+| +.              | Floating-point addition.                                            |
+| -. (infix)      | Floating-point subtraction.                                         |
+| ~-. -. (prefix) | Floating-point negation.                                            |
+| \*.             | Floating-point multiplication.                                      |
+| /.              | Floating-point division.                                            |
+| \*\*            | Floating-point exponentiation.                                      |
+| @               | List concatenation.                                                 |
+| ^               | String concatenation.                                               |
+| !               | Dereferencing (return the currentcontents of a reference).          |
+| :=              | Reference assignment                                                |
+| =               | Structural equality test.                                           |
+| <>              | Structural inequality test.                                         |
+| ==              | Physical equality test.                                             |
+| !=              | Physical inequality test.                                           |
+| <               | Test “less than”.                                                   |
+| <=              | Test “less than or equal”.                                          |
+| >               | Test “greater than”.                                                |
+| >=              | Test “greater than or equal”.                                       |
+| && &            | Boolean conjunction.                                                |
+| \|\| or         | Boolean disjunction.                                                |
+
 <!--}}}-->
 
-### Printf<!--{{{-->
+## データ型 (data type)
 
-> https://ocaml.org/api/Printf.html
-
-```
-% [flags] [width] [.precision] type
-d、 i、 n、 l、 L、 N: 引数の整数を符号付き十進数に変換します。
-u: 引数の整数を符号なし十進数に変換します。
-x: 引数の整数を小文字の符号なし十六進数に変換します。
-X: 引数の整数を大文字の符号なし十六進数に変換します。
-o: 引数の整数を符号なし八進数に変換します。
-s: 引数文字列を挿入します。
-S: 引数文字列を Caml 構文で（二重引用符でくくり、エスケープして）挿入します。
-c: 引数文字を挿入します。
-C: 引数文字を Caml 構文で（単引用符でくくり、エスケープして）挿入します。
-f: 浮動小数点数引数を dddd.ddd 形式の十進表記に変換します。
-F: 浮動小数点数引数を dddd. か dddd.ddd か d.ddd e+-dd 形式の Caml 構文に変換します。
-e、 E: 浮動小数点数引数を d.ddd e+-dd （仮数部と指数部）形式の十進表記に変換します。
-g、 G: 浮動小数点数引数を f、 e、 E の形式のうち最も短かくなる形式に変換します。
-B: 真偽値の引数を文字列 true か false に変換します。
-b: 真偽値の引数を変換します（後方互換性のために残されています。新しいプログラムでは使わないでください）。
-!: 引数を取らず、出力をフラッシュします。
-%: 引数を取らず、 % を出力します。
-,: 変換指定子を区切るためだけに使い、何も出力しません。
-```
-
-<!--}}}-->
-
-### 変数 (variable)<!--{{{-->
-
-束縛 (binding)
-vairable binding
-https://en.wikipedia.org/wiki/Free_variables_and_bound_variables
-
-```ocaml
-let varname = expr
-```
-
-<!--}}}-->
-
-### データ型 (data type)<!--{{{-->
+<!--{{{-->
 
 <https://ocaml.org/learn/tutorials/data_types_and_matching.ja.html>
 
@@ -167,6 +173,132 @@ type 'a pt = Point of 'a * 'a;;
 
 <!--}}}-->
 
+### 変数<!--{{{-->
+
+束縛 (binding)
+vairable binding
+https://en.wikipedia.org/wiki/Free_variables_and_bound_variables
+
+- start at lowcase
+- expr equal pratical value in ocaml
+
+```ocaml
+let varname = expr
+
+let <variable> <expr1> in <expr2>
+```
+
+in expr2 variable scoped in expr2
+
+<!--}}}-->
+
+### 基本型 (basic types)<!--{{{-->
+
+int, float, char, string
+
+<!--}}}-->
+
+### 直和型 (sum type)<!--{{{-->
+
+<!--}}}-->
+
+### リスト型 (list type)<!--{{{-->
+
+<!--}}}-->
+
+### 配列型 (Array type)<!--{{{-->
+
+- mutable data structure
+- index start at 0
+- <- modification syntax
+- .(i) refer element of array
+
+```
+let numbers =[|1;2;3;4|];;
+val numbers int array =[|1;2;3;4|];;
+numbers.(2)<-43;;
+```
+
+<!--}}}-->
+
+### 関数型 (function type)<!--{{{-->
+
+<!--}}}-->
+
+### オプション型 (Option type)<!--{{{-->
+
+多相的なデータ型
+
+```
+type 'a option = None | Some of 'a
+
+let rec find_if f = function
+  [] -> None
+| x :: xs -> if f x then Some x else find_if f xs
+```
+
+contractor Some, None
+
+<!--}}}-->
+
+### レコード型 (record type)<!--{{{-->
+
+<!--}}}-->
+
+### バリアント型 (variant type)<!--{{{-->
+
+<!--}}}-->
+
+### 代数型 (algebraic types)<!--{{{-->
+
+<!--}}}-->
+
+#### タプル (tuple)<!--{{{-->
+
+```ocaml
+let t = (1, 8)
+let t2 = (1, (4, 6))
+let a, b = t
+```
+
+<!--}}}-->
+
+## 標準ライブラリ
+
+### Printf<!--{{{-->
+
+[ OCaml 標準ライブラリ探訪 #3.0: Printf: 便利だけどいろいろ謎のある奴 - camlspotter’s blog](https://camlspotter.hatenablog.com/entry/20091102/1257099984)
+
+[OCaml の format (型安全な printf/scanf) の仕組み - 簡潔な Q](https://qnighy.hatenablog.com/entry/2017/01/26/215948)
+
+> https://ocaml.org/api/Printf.html
+
+```
+% [flags] [width] [.precision] type
+d、 i、 n、 l、 L、 N: 引数の整数を符号付き十進数に変換します。
+u: 引数の整数を符号なし十進数に変換します。
+x: 引数の整数を小文字の符号なし十六進数に変換します。
+X: 引数の整数を大文字の符号なし十六進数に変換します。
+o: 引数の整数を符号なし八進数に変換します。
+s: 引数文字列を挿入します。
+S: 引数文字列を Caml 構文で（二重引用符でくくり、エスケープして）挿入します。
+c: 引数文字を挿入します。
+C: 引数文字を Caml 構文で（単引用符でくくり、エスケープして）挿入します。
+f: 浮動小数点数引数を dddd.ddd 形式の十進表記に変換します。
+F: 浮動小数点数引数を dddd. か dddd.ddd か d.ddd e+-dd 形式の Caml 構文に変換します。
+e、 E: 浮動小数点数引数を d.ddd e+-dd （仮数部と指数部）形式の十進表記に変換します。
+g、 G: 浮動小数点数引数を f、 e、 E の形式のうち最も短かくなる形式に変換します。
+B: 真偽値の引数を文字列 true か false に変換します。
+b: 真偽値の引数を変換します（後方互換性のために残されています。新しいプログラムでは使わないでください）。
+!: 引数を取らず、出力をフラッシュします。
+%: 引数を取らず、 % を出力します。
+,: 変換指定子を区切るためだけに使い、何も出力しません。
+```
+
+<!--}}}-->
+
+## その他 (Other)
+
 ### 連結リスト (linked list)<!--{{{-->
 
 > OCaml のリストは、全ての要素が、同じ型
@@ -180,16 +312,6 @@ type 'a pt = Point of 'a * 'a;;
 1 :: [2; 3]
 1 :: 2 :: [3]
 1 :: 2 :: 3 :: []
-```
-
-<!--}}}-->
-
-### タプル (tuple)<!--{{{-->
-
-```ocaml
-let t = (1, 8)
-let t2 = (1, (4, 6))
-let a, b = t
 ```
 
 <!--}}}-->
@@ -214,7 +336,7 @@ let rec funcname expr
 
 ### 末尾再帰 (tail recursion)<!--{{{-->
 
-[末尾再帰 s - Wikipedia](https://ja.wikipedia.org/wiki/末尾再帰s)
+[末尾再帰 - Wikipedia](https://ja.wikipedia.org/wiki/末尾再帰s)
 
 <!--}}}-->
 
@@ -247,6 +369,8 @@ match t with
 関数を引数に取る関数
 
 [Higher-order function - Wikipedia](https://en.wikipedia.org/wiki/Higher-order_function)
+
+In functional programming, Higher-order function (also fold termed reduce, accumulate, aggregate, compress, or inject) refers to a family of higher-order functions that analyze a recursive data structure and through use of a given combining operation, recombine the results of recursively processing its constituent parts, building up a ...
 
 ```ocaml
 let twice f x =
@@ -351,16 +475,251 @@ plt.show()
 
 <!--}}}-->
 
-### ラベル引数
+### ラベル引数 (lavel arguments)<!--{{{-->
 
 ```
 let rec label_arg ~first:a ~last:b =
   if a > b then [] else a :: label_arg ~first:(a + 1) ~last:b
 ```
 
-### オプション引数
+<!--}}}-->
+
+### オプション引数 (optional arguments)<!--{{{-->
 
 ```
 let rec optional_arg ?(step = 1) a b =
   if a > b then [] else a :: optional_arg ~step (a + step) b
 ```
+
+<!--}}}-->
+
+### 一般化された代数的データ型 (GADTs: Generalized algebraic data type)<!--{{{-->
+
+```
+type 'a t =
+  | Int : int -> int t
+  | Bool : bool -> bool t
+
+(* f 型注釈が必須 *)
+let f : type a. a t -> int -> bool = fun t y -> match t with
+  | Int x -> y >= 2
+  | Bool x -> x
+;;
+```
+
+> 値コンストラクタに依存して、型パラメータの制約が変化しうる
+> 型変数が存在量化されうる
+
+[OCaml の GADTs について](https://zenn.dev/0918nobita/scraps/162c21882f0d0b)
+
+<!--}}}-->
+
+### 多相再帰 (polymorphism recursion)<!--{{{-->
+
+```
+type 'a fuga =
+  | Leaf of 'a
+  | Nested of 'a list fuga
+
+(* depth の型注釈が必須 *)
+let rec depth: 'a. 'a fuga -> int = function
+  | Leaf _ -> 0
+  | Nested y -> 1 + depth y
+;;
+
+print_int (depth (Nested (Nested (Nested (Leaf [[[0]]])))));;
+```
+
+<!--}}}-->
+
+### プリプロセッサー PPX (Preprocessor PPX)<!--{{{-->
+
+[Ocaml PPX](./PPX.md)
+
+##### PreProcessor eXtension framework
+
+None Text processor
+
+Input: AST (Abstract Syntax Tree)
+No typing
+Output: AST
+
+123456 -> Z.of_string "1234567"
+
+##### How to use
+
+- Macro
+- Syntax
+  Monadic let
+  Typed regex:
+  regex "(?P<name>regex)" : <name : string> regex 型情報を持つ正規表現
+- Code generator
+  type t = Foo [@@deriving show]
+- Can't extend OCaml
+  AST -> 'aAST
+
+##### Limitation
+
+- Attribute and extension points for things out of the language.
+- No type information is available
+
+##### Attribute
+
+- annotation
+  expression: [@...]
+  toplevel [@@...]
+  entire file [@@@...]
+
+Infix or Postfix pattern
+
+- let [@a] .. | let x = .. [@@a]
+- match [@a] x with .. | (match x with ..) [@a]
+
+##### Extension points
+
+- extension point
+  expression [%a] + 8
+  toplevel [%%a]
+
+##### Payload
+
+- payload(each extension, attribute can have a payload)
+
+[@foo 8]
+[%var fun x -> M.y ()]
+[@pee let x = 1;; let y = 2]
+[@foo: int -> int] \s(type signature)
+[`bar: [`Foo]]
+[%baa? 'a' .. 'z'] \s(pattern)
+
+##### PPX code transformer
+
+.ml
+structure -> structure
+
+.mli
+signature -> signature ()
+
+tools:
+helper, iterator, mapper ...
+
+##### PPX at the buttom
+
+ocaml -ppx ./ppx_my_own.exe code.ml (Hard) Don't do this.
+PPX complications, driver, exec speed down, implement io hard ->
+Use ppxlib.
+
+##### Example code
+
+```
+open Ppxlib
+let impl : Ast.structure -> Ast.structure = fun x -> x
+let intf : Ast.signature -> Ast.signature = fun x -> x
+
+let () = Ppxlib.Driver.register_transformation
+~impl: impl
+~intf: intf
+"ppx_own"
+```
+
+compile with dune
+
+```
+; dune(library
+(kind ppx_rewriter)
+(name ppx_own)
+; ( public_name_ppx_own)
+(libraries ppxlib))
+```
+
+use PPX in in library
+link with pps
+
+```
+(library
+(name my_own)
+(public_name my_own)
+(preprocess (pps ppx_own ppx_not_own))
+(libraries whatever))
+```
+
+AST traverse replace int consts by 8
+
+```
+class my = object
+inherit Ast_traverse.map
+
+method! constrant c =
+match c with
+| Pconst_integer_ -> Pconst_integer ("8", None)
+| _ -> c
+end
+```
+
+##### Referenced
+
+- https://youtu.be/q--n7KKNPOw
+
+<!--}}}-->
+
+### タグ付き共用体 (tagged union)<!--{{{-->
+
+[タグ付き共用体 | Zen Language Documentation](https://www.zen-lang.org/ja-JP/docs/ch03-tagged-union/)  
+[Tagged union - Wikipedia](https://en.wikipedia.org/wiki/Tagged_union)
+
+タグ付き共用体は、列挙型と共用体を組み合わせたデータ構造です。タグ付き共用体により、共用体が有している値のタグを検査してから、そのタグに紐づくヴァリアントを操作することができます。このことにより、複雑なデータ構造を少ないコードで安全に扱うことが可能になります。タグ付き共用体は、関数型言語では代数的データ型と呼ばれるものです。
+
+<!--}}}-->
+
+### Variant type (COM - Component Object Model){{{
+
+[Variant type (COM)](<https://en.wikipedia.org/wiki/Variant_type_(COM)>)
+
+<!--}}}-->
+
+### Dune コンポーザブルビルドシステム (A composable build system)<!--{{{-->
+
+[GitHub - ocaml/dune: A composable build system for OCaml.](https://github.com/ocaml/dune)  
+[dune documentation](https://dune.readthedocs.io/en/stable/)
+
+```
+dune
+(executable
+ (name hello_world)
+ (libraries lwt.unix))
+```
+
+deps: dependence files
+action
+
+```
+(executable
+ (name run_tests)
+ (libraries alcotest test_data test_list test_sort test_record))
+
+(rule
+ (alias runtest)
+ (deps run_tests.exe)
+ (action
+  (run %{deps} -q --color=always)))
+```
+
+<!--}}}-->
+
+### ファイル拡張子 (file extensions)<!--{{{-->
+
+- .ml は実装ファイルで定義を書きます。
+- .mli はインターフェースファイルで、仕様を書きます。
+- .mll は ocamllex というソフトが字句解析プログラムを生成するのに使います。
+- .mly は ocamlyacc というソフトが構文解析プログラムを生成するのに使います。
+<!--}}}-->
+
+### インタプリタ例 (interpreter example)<!--{{{-->
+
+<https://www.fos.kuis.kyoto-u.ac.jp/~igarashi/class/isle4-06w/text/miniml005.html>
+
+<!--}}}-->
+
+### ファンクタ (fanctor)<!--{{{-->
+
+<!--}}}-->
