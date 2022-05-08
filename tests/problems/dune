@@ -1,9 +1,9 @@
 (executable
- (name run_tests)
+ (name problems)
  (libraries alcotest test_data test_list test_sort test_record))
 
 (rule
- (alias runtest)
- (deps run_tests.exe)
+ (alias problems)
+ (deps problems.exe)
  (action
   (run %{deps} -q --color=always)))

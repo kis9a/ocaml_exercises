@@ -1,0 +1,4 @@
+(library
+ (name problems)
+ (public_name learn.problems)
+ (libraries unix))

@@ -198,10 +198,6 @@ int, float, char, string
 
 <!--}}}-->
 
-### 直和型 (sum type)<!--{{{-->
-
-<!--}}}-->
-
 ### リスト型 (list type)<!--{{{-->
 
 <!--}}}-->
@@ -249,7 +245,19 @@ contractor Some, None
 
 <!--}}}-->
 
-### 代数型 (algebraic types)<!--{{{-->
+### 代数データ型 (algebraic types)<!--{{{-->
+
+[「ADT, 直和・直積, State Machine」 - Qiita](https://qiita.com/ymtszw/items/dff02ad6350032688676)
+
+主に直積型と直和型の組み合わせ
+
+### 直和型 (sum type)<!--{{{-->
+
+<!--}}}-->
+
+### 直積型 (product type)<!--{{{-->
+
+まず直積型は、複数の型の、有限個の組み合わせからなる型です。
 
 <!--}}}-->
 
@@ -260,6 +268,8 @@ let t = (1, 8)
 let t2 = (1, (4, 6))
 let a, b = t
 ```
+
+<!--}}}-->
 
 <!--}}}-->
 
@@ -463,14 +473,6 @@ x = np.arange(-5, 5, 0.1)
 y = koutou(x)
 plt.plot(x, y)
 plt.show()
-```
-
-<!--}}}-->
-
-### 多相性<!--{{{-->
-
-```
-
 ```
 
 <!--}}}-->
@@ -704,6 +706,14 @@ action
   (run %{deps} -q --color=always)))
 ```
 
+##### Watch
+
+<https://github.com/ocaml/dune/issues/2934>
+
+```
+dune build -w @alias_name
+```
+
 <!--}}}-->
 
 ### ファイル拡張子 (file extensions)<!--{{{-->
@@ -723,3 +733,5 @@ action
 ### ファンクタ (fanctor)<!--{{{-->
 
 <!--}}}-->
+
+### モナド

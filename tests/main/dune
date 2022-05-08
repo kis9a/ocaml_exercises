@@ -1,0 +1,9 @@
+(executable
+ (name main)
+ (libraries alcotest test_data test_list test_sort test_record))
+
+(rule
+ (alias main)
+ (deps main.exe)
+ (action
+  (run %{deps} -q --color=always)))
