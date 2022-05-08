@@ -14,9 +14,13 @@ uninstall:
 build:
 	@dune build
 
-.PHONY: test
-test:
-	dune runtest -f
+.PHONY: main
+main:
+	dune build -w @main
+
+.PHONY: problems
+problems:
+	dune build -w @problems
 
 .PHONY: clean
 clean:

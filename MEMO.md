@@ -700,7 +700,7 @@ action
  (libraries alcotest test_data test_list test_sort test_record))
 
 (rule
- (alias runtest)
+ (alias main)
  (deps run_tests.exe)
  (action
   (run %{deps} -q --color=always)))

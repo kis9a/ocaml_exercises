@@ -25,7 +25,8 @@ view [Makefile](./Makefile)
 
 ```bash
 make build
-make test
+make main
+make problems
 ```
 
 ## Development
