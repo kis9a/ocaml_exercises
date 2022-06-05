@@ -6,4 +6,4 @@ let rec hanoi (n, from, to_, via) =
   else (
     hanoi (n - 1, from, via, to_) ;
     print_hanoi (from, to_) ;
-    hanoi (n - 1, via, to_, from))
+    hanoi (n - 1, via, to_, from) )

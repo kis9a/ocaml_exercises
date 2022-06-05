@@ -1,6 +1,6 @@
 (executable
  (name problems)
- (libraries alcotest test_data test_list test_sort test_record))
+ (libraries alcotest test_problems_1))
 
 (rule
  (alias problems)

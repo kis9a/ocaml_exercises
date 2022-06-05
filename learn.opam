@@ -2,10 +2,10 @@ opam-version: "2.0"
 maintainer: "kis9ax@gmail.com"
 authors: ["kis9a"]
 license: "MIT"
-description: "Ocaml snippets"
-synopsis: "Ocaml snippets"
-homepage: "https://github.com/kis9a/ocaml-snippets"
-bug-reports: "https://github.com/kis9a/ocaml-snippets"
+description: "Ocaml note"
+synopsis: "Ocaml note"
+homepage: "https://github.com/kis9a/ocaml-note"
+bug-reports: "https://github.com/kis9a/ocaml-note"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
@@ -13,5 +13,5 @@ build: [
 depends: [
   "dune"
   "ocamlformat" { >= "0.17.0" }
-  "alcotest" {with-test}
+  "alcotest"  { >="1.4.0" }
 ]

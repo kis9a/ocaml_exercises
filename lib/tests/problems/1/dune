@@ -1,0 +1,3 @@
+(library
+ (name test_problems_1)
+ (libraries alcotest learn.problems))
