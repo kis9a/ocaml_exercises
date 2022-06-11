@@ -1,0 +1,11 @@
+profile = default
+version = 0.21.0
+wrap-fun-args=false
+field-space=loose
+break-separators=after
+sequence-style=separator
+doc-comments=before
+margin=80
+parens-tuple=always
+space-around-lists=false
+dock-collection-brackets=false

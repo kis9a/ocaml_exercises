@@ -735,3 +735,18 @@ dune build -w @alias_name
 <!--}}}-->
 
 ### モナド
+
+### 物理的平等 (physical equality) · 構造的平等 (structural equality)
+
+> https://str.i.kyushu-u.ac.jp/~bannai/ocaml-intro/traps.html
+> 比較演算に == と != を使っていませんか？ OCaml では基本型以外のデータ構造を表す変数は、基本的に はそのデータ構造へのポインタであると理解して良いでしょう。 つまり let a = b などとした場合、 a は b が指しているデータ構造への ポインタの値がそのままコピーされるだけで、そのデータ構造が いかに巨大であろうと一瞬でコピーされます。生成された値が同じでも、当然ポインタとしての値が変わって きてしまいます。 つまりポインタが違う値であっても、中身が同じと言う事が ありえるので、データ構造の中身が同じかどうかを調べたい時に はポインタの値が一緒かどうかを調べるだけでは不十分です。
+
+```
+let p1 = "WTF"
+let p2 = p1 ;;
+
+Printf.printf "%b\n" (p1 == "WTF") ; (* false *)
+Printf.printf "%b\n" (p1 == p2) (* true *)
+
+Printf.printf "%b\n" (p1 = "WTF") ;(* true *)
+```
