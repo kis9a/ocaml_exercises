@@ -736,7 +736,7 @@ dune build -w @alias_name
 
 ### モナド
 
-### 物理的平等 (physical equality) · 構造的平等 (structural equality)
+## 物理的平等 (physical equality) · 構造的平等 (structural equality)<!--{{{-->
 
 > https://str.i.kyushu-u.ac.jp/~bannai/ocaml-intro/traps.html
 > 比較演算に == と != を使っていませんか？ OCaml では基本型以外のデータ構造を表す変数は、基本的に はそのデータ構造へのポインタであると理解して良いでしょう。 つまり let a = b などとした場合、 a は b が指しているデータ構造への ポインタの値がそのままコピーされるだけで、そのデータ構造が いかに巨大であろうと一瞬でコピーされます。生成された値が同じでも、当然ポインタとしての値が変わって きてしまいます。 つまりポインタが違う値であっても、中身が同じと言う事が ありえるので、データ構造の中身が同じかどうかを調べたい時に はポインタの値が一緒かどうかを調べるだけでは不十分です。
@@ -749,4 +749,33 @@ Printf.printf "%b\n" (p1 == "WTF") ; (* false *)
 Printf.printf "%b\n" (p1 == p2) (* true *)
 
 Printf.printf "%b\n" (p1 = "WTF") ;(* true *)
+```
+
+<!--}}}-->
+
+### 第 6 章 ポリモーフィズムとその限界<!--{{{-->
+
+<https://runebook.dev/ja/docs/ocaml/>
+<https://runebook.dev/ja/docs/ocaml/polymorphism>
+
+<!--}}}-->
+
+### Immutable variables
+
+```ocaml
+let foo = 42
+let return_foo () = foo
+let foo = 24 ;;
+
+Printf.printf "%d" (return_foo ());;
+(* 42 *)
+```
+
+```ocaml
+let foo = ref 42;;
+let return_foo () = !foo;;
+foo := 24;;
+
+Printf.printf "%d" (return_foo ());;
+(* 24 *)
 ```
