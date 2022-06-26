@@ -19,5 +19,5 @@ let multiples_of_3_or_5 n =
   add (nums n) 0
 ;;
 
-Printf.printf "%d" (multiples_of_3_or_5 10) ;;
+Printf.printf "%d\n" (multiples_of_3_or_5 10) ;;
 Printf.printf "%d" (multiples_of_3_or_5 1000)

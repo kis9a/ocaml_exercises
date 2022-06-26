@@ -63,7 +63,7 @@ let amicable_numbers n =
     if i < n then
       let s = sum_of_divisors i in
       if s < n && s <> i then
-        if i = sum_of_divisors s then amicable (succ i) (List.append acc [s])
+        if i = sum_of_divisors s then amicable (succ i) (s :: acc)
         else amicable (succ i) acc
       else amicable (succ i) acc
     else acc
